@@ -5,4 +5,11 @@
 html {
     font-family: "Comic Sans MS";
     color: #1e963a;
+    background-image: url("./camo.jpg");
+    background-repeat: repeat;
+    background-size: 500px;
+}
+
+.bg_color {
+    background-color: #000000;
 }

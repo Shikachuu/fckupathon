@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
-export const Rating = (props: { setIsBad: (isBad: boolean) => void}) => {
-  const {setIsBad} = props;
+export const Rating = (props: { setIsBad: (isBad: boolean) => void }) => {
+  const { setIsBad } = props;
   const [file, setFile] = useState<File | null>(null);
   const [rating, setRating] = useState<number | null>(null);
 
   useEffect(() => {
     if (file && (file.size / 1024 > 100 || file.size / 1024 < 1)) {
-      setIsBad(true)
+      setIsBad(true);
     }
     setRating(file ? Math.floor(file.size / 1024) : 0);
   }, [file]);
@@ -30,12 +30,12 @@ export const Rating = (props: { setIsBad: (isBad: boolean) => void}) => {
       </div>
       {file ? (
         <section>
-          <div className="text-xl mt-3">
+          <div className="text-xl mt-3 bg_color">
             Your rating: {Math.floor(file.size / 1024)} (Between 1 and 100)
           </div>
         </section>
       ) : (
-        <div className="text-l">No rating selected</div>
+        <div className="text-l bg_color">No rating selected</div>
       )}
       {list.map((star) => {
         return (

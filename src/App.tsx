@@ -64,12 +64,12 @@ function App() {
   }
 
   if (isBad) {
-    return <div>BAD</div>
+    return <div>BAD</div>;
   }
 
   return (
     <div className="text-center mt-8">
-      <h1 className="text-2xl">Contact us</h1>
+      <h1 className="text-2xl bg_color">Contact us</h1>
       <div className="flex flex-col p-8">
         <input
           className="border-2 m-8"
@@ -102,15 +102,17 @@ function App() {
             byeStart();
           }}
         >
-          <span className="text-6xl absolute top-0 left-0  animate-spin">
+          <span className="text-6xl absolute top-0 left-0  animate-spin bg_color">
             🎣
           </span>
           <span className="absolute top-0 left-0 text-2xl">Send</span>
         </button>
       </div>
       <div>
-        <div className="text-2xl mt-12 mb-4">Rate your experience!</div>
-        <Rating setIsBad={setIsBad}/>
+        <div className="text-2xl mt-12 mb-4 bg_color">
+          Rate your experience!
+        </div>
+        <Rating setIsBad={setIsBad} />
       </div>
     </div>
   );
