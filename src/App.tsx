@@ -64,7 +64,7 @@ function App() {
   }
 
   if (isBad) {
-    return <div>BAD</div>;
+    return <div className="bg_color">BAD</div>;
   }
 
   return (
