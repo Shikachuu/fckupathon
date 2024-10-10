@@ -1,10 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import "./App.css";
 import { useSpeech } from "react-text-to-speech";
+import { Rating } from "./Rating";
 
 function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [isBad, setIsBad] = useState(false);
 
   const { start: nameStart } = useSpeech({ text: "Name" });
   const { start: emailStart } = useSpeech({ text: "Email address" });
@@ -61,6 +63,10 @@ function App() {
     }
   }
 
+  if (isBad) {
+    return <div>BAD</div>
+  }
+
   return (
     <div className="text-center mt-8">
       <h1 className="text-2xl">Contact us</h1>
@@ -101,6 +107,10 @@ function App() {
           </span>
           <span className="absolute top-0 left-0 text-2xl">Send</span>
         </button>
+      </div>
+      <div>
+        <div className="text-2xl mt-12 mb-4">Rate your experience!</div>
+        <Rating setIsBad={setIsBad}/>
       </div>
     </div>
   );
